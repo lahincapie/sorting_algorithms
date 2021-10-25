@@ -8,28 +8,28 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *swap_node, *next_aux;
+listint_t *change, *next_aux;
 
 	if (list == NULL || *list == NULL)
 		return;
-	swap_node = (*list)->next;
-	while (swap_node != NULL)
+	change = (*list)->next;
+	while (change != NULL)
 	{
-		next_aux = swap_node->next;
-		while (swap_node->prev != NULL && swap_node->prev->n > swap_node->n)
+		next_aux = change->next;
+		while (change->prev != NULL && change->prev->n > change->n)
 		{
-			swap_node->prev->next = swap_node->next;
-			if (swap_node->next != NULL)
-				swap_node->next->prev = swap_node->prev;
-			swap_node->next = swap_node->prev;
-			swap_node->prev = swap_node->next->prev;
-			swap_node->next->prev = swap_node;
-			if (swap_node->prev == NULL)
-				*list = swap_node;
+			change->prev->next = change->next;
+			if (change->next != NULL)
+				change->next->prev = change->prev;
+			change->next = change->prev;
+			change->prev = change->next->prev;
+			change->next->prev = change;
+			if (change->prev == NULL)
+				*list = change;
 			else
-				swap_node->prev->next = swap_node;
+				change->prev->next = change;
 			print_list(*list);
 		}
-		swap_node = next_aux;
+		change = next_aux;
 	}
 }
