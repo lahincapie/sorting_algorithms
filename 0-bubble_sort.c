@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * bubble_sort- function that sorts an array of
+ * bubble_sort - function that sorts an array of
  * integers in ascending order using the Bubble
  * sort algorithm
  * @array: Array to convert to a doubly linked list
@@ -17,7 +17,7 @@ void bubble_sort(int *array, size_t size)
 
 	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < size-1; j++)
+		for (j = 0; j < size - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
