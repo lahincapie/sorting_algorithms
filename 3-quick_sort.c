@@ -13,8 +13,10 @@ size_t partition(int *array, ssize_t li, ssize_t hi, size_t size)
 {
 	ssize_t i, j;
 	int aux, pivot;
+
 	pivot = array[hi];
 	i = li - 1;
+
 	for (j = li; j < hi; j++)
 	{
 		if (array[j] < pivot)
@@ -49,6 +51,7 @@ size_t partition(int *array, ssize_t li, ssize_t hi, size_t size)
 void quicksort(int *array, ssize_t li, ssize_t hi, size_t size)
 {
 	ssize_t pivot;
+
 	if (li < hi)
 	{
 		pivot = partition(array, li, hi, size);
