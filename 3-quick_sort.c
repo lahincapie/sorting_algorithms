@@ -2,20 +2,6 @@
 #include "sort.h"
 
 /**
- * quick_sort - function that sorts an array of integers
- * in ascending order using the Quick sort algorithm
- * Quick sort algorithm
- * @array: The array to sort
- * @size: The size of the array
- */
-void quick_sort(int *array, size_t size)
-{
-	if (array == NULL || size < 2)
-		return;
-	quicksort(array, 0, size - 1, size);
-}
-
-/**
  * partition - finds the partition for the quicksort
  * @array: array to sort
  * @lowest_index: lowest index of the partition to sort
@@ -69,4 +55,18 @@ void quicksort(int *array, ssize_t lowest_index, ssize_t highest_index, size_t s
 		quicksort(array, lowest_index, pivot - 1, size);
 		quicksort(array, pivot + 1, highest_index, size);
 	}
+}
+
+/**
+ * quick_sort - function that sorts an array of integers
+ * in ascending order using the Quick sort algorithm
+ * Quick sort algorithm
+ * @array: The array to sort
+ * @size: The size of the array
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (array == NULL || size < 2)
+		return;
+	quicksort(array, 0, size - 1, size);
 }
